@@ -1,7 +1,7 @@
 import Foundation
 
 class Game: NSObject {
-    var player1Score = 0
+    private var player1Score = 0
     
     func getScore() -> String {
         if player1Score == 1 {
