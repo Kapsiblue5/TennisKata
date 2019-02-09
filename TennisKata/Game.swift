@@ -11,6 +11,9 @@ class Game: NSObject {
     
     func getScore() -> String {
         
+        if player1Score == player2Score && player1Score >= 3 {
+            return "Deuce"
+        }
         if player1Score == player2Score {
             return getPointsFromScore(score: player1Score) + " All"
         }
