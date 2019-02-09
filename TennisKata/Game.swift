@@ -4,7 +4,6 @@ fileprivate enum Score:String {
     case Love, Fifteen, Thirty, Forty
 }
 
-
 class Game: NSObject {
     private var player1Score = 0
     private var player2Score = 0
