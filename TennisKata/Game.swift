@@ -8,10 +8,10 @@ class Game: NSObject {
         if player1Score == 2 && player2Score == 0 {
             return "Thirty,Love"
         }
-        if player1Score == 1 && player2Score == 1 {
+        else if player1Score == 1 && player2Score == 1 {
             return "Fifteen All"
         }
-        if player1Score == 1 {
+        else if player1Score == 1 {
             return "Fifteen,Love"
         }
         return "Love All"
