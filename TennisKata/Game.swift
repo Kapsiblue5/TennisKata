@@ -10,11 +10,9 @@ class Game: NSObject {
     private var player2Score = 0
     
     func getScore() -> String {
-        if (player1Score > 3) && (player1Score - player2Score == 1) {
-            return "Advantage Player1"
-        }
-        if (player2Score > 3) && (player2Score - player1Score == 1) {
-            return "Advantage Player2"
+        
+        if isAdvantage() {
+            return "Advantage " + playerWithHigherScore()
         }
         if isDeuce() {
             return "Deuce"
@@ -33,8 +31,25 @@ class Game: NSObject {
         player2Score += 1
     }
     
+    private func playerWithHigherScore() -> String {
+        if player1Score > player2Score {
+            return "Player1"
+        }
+        return "Player2"
+    }
+    
     private func isDeuce() -> Bool {
         return player1Score == player2Score && player1Score >= 3
+    }
+    
+    private func isAdvantage() -> Bool {
+        return  player1Advantage() || player2Advantage()
+    }
+    private func player1Advantage() -> Bool {
+        return (player1Score > 3) && (player1Score - player2Score == 1)
+    }
+    private func player2Advantage() -> Bool {
+        return (player2Score > 3) && (player2Score - player1Score == 1)
     }
     
     private func getPointsFromScore(score:Int) -> String {
