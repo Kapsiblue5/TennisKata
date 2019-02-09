@@ -73,6 +73,14 @@ class TennisKataTests: XCTestCase {
         
         XCTAssertEqual("Advantage Player2", score)
     }
+    
+    func test_ShouldReturnPlayer1Wins_WhenPlayer1ScoresFourPoints() {
+        setScoreForGame(player1Score: 4, player2Score: 0)
+        
+        let score = game.getScore()
+        
+        XCTAssertEqual("Player1 Wins", score)
+    }
 }
 
 extension TennisKataTests {

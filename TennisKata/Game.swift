@@ -11,6 +11,10 @@ class Game: NSObject {
     
     func getScore() -> String {
         
+        if player1Score > 3 &&  (player1Score - player2Score >= 2){
+            return "Player1 Wins"
+        }
+        
         if isAdvantage() {
             return "Advantage " + playerWithHigherScore()
         }
