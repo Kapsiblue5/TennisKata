@@ -21,3 +21,10 @@ The scoring system is rather simple:
 3. If at least three points have been scored by each player, and the scores are equal, the score is “deuce”.
 
 4. If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is “advantage” for the player in the lead.
+
+Getting Started:
+     Tennis Kata is wriiten in Swift programming language with TDD approach.
+     To validate this project open the TennisKata.xcodeproj with that latest Xcode.
+     You can find the test cases in TennisKataTests.swift and the production code is in Game.swift.
+     You can go to TennisKataTests.swift to run all the unit test cases . 
+     The code coverage can be viewed in Project navigator in Xcode.
