@@ -2,8 +2,12 @@ import Foundation
 
 class Game: NSObject {
     private var player1Score = 0
+    private var player2Score = 0
     
     func getScore() -> String {
+        if player1Score == 1 && player2Score == 1 {
+            return "Fifteen All"
+        }
         if player1Score == 1 {
             return "Fifteen,Love"
         }
@@ -12,6 +16,10 @@ class Game: NSObject {
     
     func player1Scores() {
         player1Score = 1
+    }
+    
+    func player2Scores() {
+        player2Score = 1
     }
 }
 
