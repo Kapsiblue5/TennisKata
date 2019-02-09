@@ -27,5 +27,14 @@ class TennisKataTests: XCTestCase {
         XCTAssertEqual("Fifteen All", score)
     }
     
+    func test_ShouldReturnThirtyLove_WhenPlayer1WinsFirstTwoPoints() {
+        game.player1Scores()
+        game.player1Scores()
+        
+        let score = game.getScore()
+        
+        XCTAssertEqual("Thirty,Love", score)
+    }
+    
     
 }
