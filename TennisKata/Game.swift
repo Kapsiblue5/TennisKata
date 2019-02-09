@@ -10,23 +10,13 @@ class Game: NSObject {
     private var player2Score = 0
     
     func getScore() -> String {
-        
-        if player1Score == player2Score && player1Score >= 3 {
+        if isDeuce() {
             return "Deuce"
         }
         if player1Score == player2Score {
             return getPointsFromScore(score: player1Score) + " All"
         }
-        else if player1Score == 3 && player2Score == 0 {
-            return "Forty,Love"
-        }
-        else if player1Score == 2 && player2Score == 0 {
-            return "Thirty,Love"
-        }
-        else if player1Score == 1 {
-            return "Fifteen,Love"
-        }
-        return ""
+        return getPointsFromScore(score: player1Score) + "," + getPointsFromScore(score: player2Score)
     }
     
     func player1Scores() {
@@ -35,6 +25,10 @@ class Game: NSObject {
     
     func player2Scores() {
         player2Score += 1
+    }
+    
+    private func isDeuce() -> Bool {
+        return player1Score == player2Score && player1Score >= 3
     }
     
     private func getPointsFromScore(score:Int) -> String {
