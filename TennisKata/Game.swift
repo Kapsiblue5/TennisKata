@@ -10,6 +10,10 @@ class Game: NSObject {
     private var player2Score = 0
     
     func getScore() -> String {
+        if (player1Score > 3) && (player1Score - player2Score == 1) {
+            return "Advantage Player1"
+        }
+        
         if isDeuce() {
             return "Deuce"
         }
