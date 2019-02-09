@@ -37,14 +37,30 @@ class TennisKataTests: XCTestCase {
     }
     
     func test_ShouldReturnFortyLove_WhenPlayer1WinsFirstThreePoints() {
-        game.player1Scores()
-        game.player1Scores()
-        game.player1Scores()
+        setScoreForGame(player1Score: 3, player2Score: 0)
         
         let score = game.getScore()
         
         XCTAssertEqual("Forty,Love", score)
     }
+}
+
+extension TennisKataTests {
     
+    fileprivate func setScoreForGame(player1Score:Int,player2Score:Int) {
+        updatePlayer1Score(player1Score)
+        updatePlayer2Score(player2Score)
+    }
     
+    private func updatePlayer1Score(_ player1Score: Int) {
+        for _ in 0..<player1Score {
+            game.player1Scores()
+        }
+    }
+    
+    private func updatePlayer2Score(_ player2Score: Int) {
+        for _ in 0..<player2Score {
+            game.player2Scores()
+        }
+    }
 }
