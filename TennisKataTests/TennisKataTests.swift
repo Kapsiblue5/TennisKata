@@ -11,7 +11,7 @@ class TennisKataTests: XCTestCase {
     }
     
     func test_ShouldReturnFifteenLove_WhenPlayer1WinsFirstPoint() {
-        game.player1Scores()
+        setScoreForGame(player1Score: 1, player2Score: 0)
         
         let score = game.getScore()
         
@@ -19,8 +19,7 @@ class TennisKataTests: XCTestCase {
     }
     
     func test_ShouldReturnFifteenAll_WhenBothPlayersWinsFirstPoint() {
-        game.player1Scores()
-        game.player2Scores()
+        setScoreForGame(player1Score: 1, player2Score: 1)
         
         let score = game.getScore()
         
@@ -28,8 +27,7 @@ class TennisKataTests: XCTestCase {
     }
     
     func test_ShouldReturnThirtyLove_WhenPlayer1WinsFirstTwoPoints() {
-        game.player1Scores()
-        game.player1Scores()
+        setScoreForGame(player1Score: 2, player2Score: 0)
         
         let score = game.getScore()
         
